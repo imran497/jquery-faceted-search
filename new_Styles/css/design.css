@@ -29,6 +29,10 @@
         transform:rotate(360deg)
     }
 }
+
+highlight{
+  font-weight: bold;
+}
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea {
     width: 100%;
     border: 1px solid #d5dade;

@@ -1274,10 +1274,11 @@ jQuery(function ($) {
                         }
                         if (parts == 'context,text') {
                           console.log(record['context']);
-                            /*context_flag = true;
+                            context_flag = true;
                             var thevalue1 = " ";
-                            var b = JSON.stringify(record['context']['highlight']);
-                            if (typeof b != 'undefined' && b.split(',').length == 1) {
+                            var b = JSON.stringify(record['context']['text']);
+                            //var b = JSON.stringify(record['context']['highlight']);
+                            /*if (typeof b != 'undefined' && b.split(',').length == 1) {
                                 if (thevalue != undefined)
                                     thevalue1 = thevalue1 + (thevalue[0] == undefined ? "" : thevalue[0]) + "<B>" + record['context']['highlight'] + "</B>" + (thevalue == undefined ? "" : thevalue);
                                 else
@@ -1293,8 +1294,9 @@ jQuery(function ($) {
                                     }
                                 }
                             thevalue = thevalue1;*/
-                            record['context']['text'] = record['context']['text'].replace(/highlight>/g, "b>");
-                            console.log(record['context']);
+                            thevalue = b;
+                            //record['context']['text'] = record['context']['text'].replace(/highlight>/g, "b>");
+                            //console.log(record['context']);
                         }
                     } else {
                         var thevalue = [];
@@ -1715,7 +1717,7 @@ jQuery(function ($) {
             mltFlag = false;
             if (autosuggestflag) {
               console.log("dosearch");
-                var autocompletion = '/searchblox/servlet/AutoSuggest';
+                var autocompletion = rootUrl + '/searchblox/servlet/AutoSuggest';
                 var pathname = window.location.pathname;
                 if (pathname.indexOf("/secure/") > -1) {
                     autocompletion = "../../servlet/AutoSuggest";
